@@ -1,0 +1,16 @@
+<view class='container'>
+  <view class='header'>
+    <view class='search bg-default-re'>
+      <input bindconfirm='search' confirm-type="search" placeholder-class="placeholder" placeholder='搜索产品，技术，案例关键词'></input>
+    </view>
+  </view>
+
+  <view class='notice bg-default-col'>
+    <view class='first'>
+      功能待开发
+    </view>
+    <view class='second'>
+      敬请期待
+    </view>
+  </view>
+</view>

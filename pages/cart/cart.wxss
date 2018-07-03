@@ -1,0 +1,163 @@
+page{
+  background-color: #f7f7f7;
+}
+
+.total {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 112rpx;
+  line-height: 108rpx;
+  background-color: #fff;
+}
+
+.total .price{
+  font-size: 36rpx;
+  line-height: 120rpx;
+  font-weight: 300;
+}
+
+.total button{
+  display: unset;
+  font-size: 27rpx;
+  color: #fff;
+  padding: 22rpx 21rpx;
+  border-radius: 16rpx;
+}
+
+.item{
+  margin-top: 27rpx;
+  background-color: #fff;
+  padding: 27rpx 21rpx 12rpx;
+  position: relative;
+   transition: .2s; 
+}
+
+.item .checkbox{
+  line-height: 148rpx;
+  position: relative;
+}
+
+.item .checkbox icon{
+  position: absolute;
+  left: -8rpx;
+  top: 13px;
+}
+
+.cover image{
+  width: 84%;
+}
+
+.amount{
+   padding-top: 12rpx; 
+}
+
+.amount text{
+  color: rgba(0,0,0,0.72);  
+  font-size: 34rpx;
+  position: relative; 
+  top: -3rpx; 
+  font-weight: 300;
+}
+
+.amount image{
+  width: 48rpx;
+}
+
+.name{
+  font-size: 30rpx;
+  width: 90%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  color: rgba(0,0,0,0.81);
+}
+
+.model{
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 6rpx;
+}
+
+.sPrice{
+  margin-top: 10rpx;  
+  font-size: 32rpx;
+}
+
+checkbox .wx-checkbox-input{  
+  border-radius: 50%;
+  height: 42rpx;
+  width: 42rpx;
+}
+ 
+.item .remove{  
+    display: flex;
+    width: 68px;  
+    height: 100%;  
+    color: #fff;
+    position: absolute;  
+    top: 0;  
+    right: -68px;      
+    justify-content: center;   
+    align-items: center;   
+} 
+
+.remove image{
+  width: 36rpx;
+}
+
+.empty{
+  margin-top: 36%;
+}
+
+.empty image{
+  width: 210rpx;
+  position: relative;
+  right: 12rpx;
+}
+
+.notice{
+  margin-top: 16rpx;
+}
+
+.notice text{
+  font-size: 28rpx;
+  color: #666;
+}
+
+.unLogin{
+  width: 100%;
+  height: 100%;
+  padding-top: 42%;
+}
+
+.unLogin image{
+  width: 180rpx;
+  margin-right: 32rpx;
+}
+
+.noLogin{
+  margin-top: 12rpx;
+  margin-bottom: 12rpx;
+  color: #ccc;
+  font-size: 32rpx;
+}
+
+.unLogin button{
+  display: unset;
+  padding: 12rpx 84rpx;
+  color: #fff;
+  /* border: solid 1rpx #a53f35; */
+   background-color: #4aa7fa; 
+  font-weight:300;
+  box-shadow: 2rpx 2rpx #f7f7f7;
+  border-radius: 16rpx;
+}
+
+.unLogin button::after{
+  border: none
+}
+
+.alert{
+  color: #E71C21;
+}

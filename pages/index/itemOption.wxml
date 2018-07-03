@@ -1,0 +1,49 @@
+<view class='container'>
+  <!-- 视频模块 -->
+  <view hidden='{{active == 2}}' class='video Moudel' wx:for='{{videoList}}' wx:key='{{index}}'>
+      <video src="{{item}}"></video>
+  </view>
+  
+  <!-- 案例模块 -->
+  <view class='cases Moudel'  hidden='{{active == 1}}'>
+    <image mode='widthFix' src='{{cases}}'></image>
+  </view>
+
+  <!-- 底部栏 -->
+  <view class='footer flex-row border-t'>
+    <view class='col-25 text-center' data-tab='1' bindtap='tabClick'>
+      <view class='img'>
+        <image style='width: 40rpx;' mode='widthFix' src='../images/video_tab.png'></image>
+      </view>
+      <view class='tabText color-df'> 
+        视频相关
+      </view>
+    </view>
+    <view class='col-25 text-center' data-tab='2' bindtap='tabClick'>
+      <view class='img'>
+        <image mode='widthFix' style='width: 32rpx;margin-top:-2rpx;'  src='../images/paper_tab.png'></image>      
+      </view>
+      <view class='tabText color-df'>
+        经典案例
+      </view>
+    </view>
+    <view class='col-25 text-center' bindtap='openProductWin'>
+      <view class='img'>
+        <image mode='widthFix' src='../images/tool_tab.png'></image>      
+      </view>
+      <view class='tabText color-df'>
+        材料设备
+      </view>
+    </view>
+    <view class='col-25 text-center serv'>
+      <button class='contact' open-type="contact"></button>
+      <view class='img'>
+        <image mode='widthFix' src='../images/serv_tab.png'></image>      
+      </view>
+      <view class='tabText color-df'>
+        工程资讯
+      </view>
+    </view>
+
+  </view>
+</view>

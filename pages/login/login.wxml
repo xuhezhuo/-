@@ -1,0 +1,50 @@
+<view class='container'>
+  <!-- 背景图  -->
+  <view class='cover'>
+    <image src='../images/bg_login.jpeg'></image>
+  </view>
+
+  <!-- 登录框  -->
+  <view class='LoginM'>
+    <view class='box'>
+      <view class='logo text-center'>
+        <image mode='widthFix' src='../images/logo.png'></image>
+      </view>
+      <view class='text-center'>
+        <text class='title'>非开挖修复</text>
+      </view>
+      <!-- 手机输入框 -->
+      <view class='flex-row mobile'>
+        <view class='col-15 text-center'>
+          <image mode='widthFix' src='../images/mobile.png'></image>        
+        </view>
+        <view class='col-75'>
+          <input type='number' bindinput='bindMobileInput' value='{{mobile}}' placeholder-class="placeholder" placeholder='请输入手机号' ></input>
+        </view>
+      </view>
+      <!-- 密码框 -->
+      <view class='flex-row pwd'>
+        <view class='col-15 text-center'>
+          <image mode='widthFix' src='../images/pwd.png'></image>        
+        </view>
+        <view class='col-50'>
+          <input type='number' bindinput='bindCodeInput' confirm-type="search" value='{{code}}' placeholder-class="placeholder" placeholder='请输入验证码' ></input>
+        </view>
+        <view class='col-35 text-center'>
+          <text class='color-df code' bindtap='sentCode'>{{timer}}</text>
+        </view>
+      </view>
+
+      <!-- 登录按钮 -->
+      <view class='btn-wrapper text-center'>
+        <button class='btn bg-default-col' bindtap='Login'>免密登录</button>
+      </view>
+
+      <!-- 注意 -->
+      <view class='tipM text-center'>
+        <image mode='widthFix' src='../images/tip.png'></image>
+        <text>未注册用户验证登录后自动注册为会员</text>
+      </view>
+    </view>
+  </view>
+</view>

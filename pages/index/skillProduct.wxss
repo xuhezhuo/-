@@ -1,0 +1,56 @@
+.search {
+  width: 100%;
+  padding-top: 21rpx;
+  padding-bottom: 27rpx;
+}
+
+.search input {
+  background-color: #fff;
+  width: 90%;
+  margin: auto;
+  height: 56rpx;
+  border-radius: 6rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}
+
+input {
+  text-align: center;
+}
+
+.placeholder {
+  font-size: 24rpx;
+}
+
+.tabItem{
+  color: #fff;
+  /* line-height: 63rpx; */
+  font-size: 32rpx;
+  padding-bottom: 21rpx;
+}
+
+.arrow{
+  position: absolute;
+  width: 90rpx;
+  bottom: -3rpx;
+  left: 39%;
+}
+
+.item{
+  display: inline-block;
+}
+
+.inner {
+  padding: 21rpx;
+}
+
+.item .img image{
+  width: 90%;
+  border: solid 1rpx #ccc;
+}
+
+.name{
+  font-size: 32rpx;
+  color: rgba(0, 0, 0, 0.81);
+}
+

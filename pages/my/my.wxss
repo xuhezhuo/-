@@ -1,0 +1,130 @@
+page{
+  background-color: #fdfefe;
+}
+
+.bg{
+  width: 100%;
+  height: 320rpx;
+}
+
+.section{
+  width: 92%;
+  margin: 0 auto;
+  position: relative;
+  top: -120rpx;
+  background-color: #fff;
+  box-shadow: 7rpx 7rpx 21rpx #eef8ff;
+}
+
+.wrapper{
+}
+
+.header{
+  padding: 21rpx;  
+  padding-top: 42rpx;
+}
+
+.header .headImg{
+  width: 173rpx;
+  height: 173rpx;
+  background-color: #fff; 
+  box-shadow: 2rpx 7rpx 9rpx #eef8ff;
+  position: absolute;
+  top: -112rpx;  
+  left: 15rpx;
+}
+
+.header .headImg .headNo{
+  width: 120rpx;
+  height: 120rpx;
+  position: relative;
+  left: 27rpx;
+  top: 27rpx;
+}
+
+.header .headImg .head{
+  width: 170rpx;
+  height: 170rpx;
+  position: relative;
+  left: 1rpx;
+  top: 1rpx;
+}
+ 
+.header .msgImg image{
+  width: 56rpx;
+}
+
+.mobile text{
+  font-size: 33rpx;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.header button{
+  display: unset;
+  padding: 12rpx 21rpx;
+  background-color: #f7f7f7;
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.64);  
+  border-radius: 6rpx;
+}
+
+.brief{
+  margin-top: 12rpx;
+  padding-bottom: 32rpx;
+  border-bottom: solid 17rpx #f6f6f6;
+  font-size: 29rpx;
+}
+
+.funcList{
+  padding: 12rpx;
+}
+
+.funcList .funcImg{
+  width: 30rpx;
+  margin-right: 20rpx;
+  position: relative;
+  top: 2rpx;
+}
+
+.funcList .func{
+  padding: 32rpx 12rpx;
+  font-size: 31rpx;
+  color: rgba(0, 0, 0, 0.72);
+  font-weight: 300;
+}
+
+.func .arrow{
+  position: absolute;
+  right: 21rpx;
+  top: 39rpx;  
+  width: 16rpx;
+}
+
+.contact{
+  display: unset; 
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  background-color: #fff;
+  font-size: 31rpx;
+  color: rgba(0, 0, 0, 0.72);
+  font-weight: 300;
+}
+
+.headNo{
+   width: 100%; 
+}
+
+.brief{
+  margin-top: 17rpx;
+}
+
+.num{
+  font-size: 39rpx;
+  font-family: sans-serif;
+}
+
+.brief .title{
+  color: #666;
+  margin-top: 9rpx;
+}

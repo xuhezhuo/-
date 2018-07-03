@@ -1,0 +1,31 @@
+<!-- 产品直销  -->
+<view class='container'>
+  <view class='header bg-default-re'>
+    <!-- <view class='search'>
+      <input bindconfirm='search' confirm-type="search" placeholder-class="placeholder" placeholder='搜索产品，技术，案例关键词'></input>
+    </view> -->
+    <view class='tabbar flex-row'>
+      <view class='tabItem col-50 text-center rel' data-tab='1' bindtap='tabClick'>
+        材料
+        <image hidden='{{tab != 1}}' mode='widthFix' class='arrow' src='../images/arrow-i.png'></image>
+      </view>
+      <view class='tabItem col-50 text-center rel' data-tab='2' bindtap='tabClick'>
+        设备
+        <image hidden='{{tab != 2}}' mode='widthFix' class='arrow' src='../images/arrow-i.png'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='wrapper'>
+    <view class='item col-50' wx:for='{{productList}}' wx:key='{{index}}' wx:for-item='product' data-id='{{product.productId}}' bindtap='openDetailWin'>
+      <view class='inner'>
+        <view class='img text-center'>
+          <image mode='widthFix' src='{{product.banner}}'></image>
+        </view>
+        <view class='name text-center'>
+          {{product.title}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

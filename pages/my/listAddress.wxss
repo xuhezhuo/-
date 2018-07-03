@@ -1,0 +1,65 @@
+page {
+  background-color: #f7f7f7;
+}
+
+.container {
+  padding-bottom: 32rpx;
+  font-weight: 300;
+}
+
+.item {
+  background-color: #fff;
+}
+
+.detail {
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  font-size: 30rpx;
+  padding-bottom: 21rpx;
+  /* font-weight: 300; */
+}
+
+.detail .info {
+  line-height: 78rpx;
+}
+
+.setting {
+  font-size: 28rpx;
+  padding: 25rpx 42rpx 25rpx 32rpx;
+}
+
+.setting .radio {
+  font-weight: 300;
+}
+
+radio .wx-radio-input {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+radio .wx-radio-input.wx-radio-input-checked {
+  /* border: none; */
+}
+
+.setting .set {
+  width: 45rpx;
+  height: 42rpx;
+}
+
+.setText {
+  margin-left: 12rpx;
+  position: relative;
+  top: -7rpx;
+}
+
+.add {
+  width: 98rpx;
+  height: 98rpx;
+  border-radius: 50%;
+  position: fixed;
+  right: 12rpx;
+  bottom: 210rpx;
+  color: #fff;
+  font-size: 89rpx;
+  line-height: 84rpx;
+}

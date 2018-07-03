@@ -1,0 +1,123 @@
+.container{
+  padding-bottom: 42rpx;
+}
+
+.header{
+   height: 72rpx; 
+   padding-top: 19rpx; 
+   padding-bottom: 6rpx; 
+}
+
+.header .col-15 image{
+  width: 52rpx;
+}
+
+.msg image{
+  position: relative;
+  /* top: 6rpx; */
+}
+
+.slide-image{
+  width: 100%;
+}
+
+/* .search{
+  text-align: center;
+} */
+
+.search input{
+  width: 100%;
+  height: 56rpx;
+  border-radius: 6rpx;
+  background-color: #fff;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}
+
+input{
+  text-align: center;
+}
+
+.placeholder{
+  font-size: 24rpx;
+}
+
+.item-wrapper{
+  margin-top: 24rpx;
+}
+
+.item-wrapper2{
+  margin-top: 12rpx;
+}
+
+.img{
+  width: 64%;
+}
+
+.name{
+  font-size: 27rpx;
+  color: #666;
+}
+
+.adsM{
+  margin-top: 21rpx;
+  padding-left: 18rpx;
+  padding-right: 18rpx;
+  padding-bottom: 21rpx;
+  border-bottom: solid 21rpx #f7f7f7;
+}
+
+.News{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.adsM swiper{
+  height: 56rpx;
+  overflow: hidden;
+}
+
+.adsM swiper-item{
+  font-size: 29rpx;
+  color: #999;
+  padding-left: 6rpx;
+  padding-right: 6rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.adsM .col-20{
+  font-size: 32rpx;
+}
+
+.adsM .col-10{
+  font-size: 22rpx;
+}
+
+.main{
+  margin-top: 32rpx;
+}
+
+.main .img2{
+  width: 90%;
+}
+
+.main .title{
+  font-size: 29rpx;
+}
+
+.serv{
+  position: relative;
+}
+
+.btn{
+  display: unset; 
+  width: 100%;
+  height: 100%;
+  position: absolute; 
+  left: 0;
+  top: 0;
+  background: transparent;
+}
+

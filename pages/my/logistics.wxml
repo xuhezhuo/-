@@ -1,0 +1,23 @@
+<view class='container'>
+  <view class='header'>
+    {{company}}：{{num}}
+  </view>
+
+  <view class='body'>
+    <view class='item flex-row' wx:for='{{itemList}}' wx:key='{{index}}' wx:if='{{index < len}}'>
+      <view class='col-25 time text-center'>
+        {{item.time}}
+        <image wx:if='{{ index ==  0 }}' src='../images/recieved.png'></image>
+        <image wx:if='{{ index !=  0 }}' src='../images/car.png'></image>
+      </view>
+      <view class='col-75 context'>
+        {{item.context}}
+      </view>
+    </view>
+
+    <view class='more text-center' wx:if='{{ show && itemList.length > 5 }}' bindtap='moreClcik'>
+      点击查看更多物流详情
+      <image src='../images/more.png'></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,64 @@
+page {
+  background-color: #f1f1f1;
+}
+
+.container {
+  padding-bottom: 70rpx;
+}
+
+.header {
+  width: 90%;
+  border-radius: 21rpx;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 25rpx;
+  padding: 36rpx 15rpx;
+  font-size: 32rpx;
+}
+
+.body {
+  width: 90%;
+  border-radius: 21rpx;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 30rpx;
+  padding: 36rpx 15rpx;
+}
+
+.time {
+  font-size: 26rpx;
+  border-right: dashed 1rpx #ccc;
+  padding-right: 20rpx;
+  padding-top: 21rpx;
+  padding-bottom: 21rpx;
+  position: relative;
+}
+
+.time image {
+  position: absolute;
+  right: -24rpx;
+  top: 36rpx;
+  width: 43rpx;
+  height: 43rpx;
+  background-color: #fff;
+}
+
+.context {
+  padding-left: 29rpx;
+  font-size: 27rpx;
+  padding-top: 21rpx;
+  padding-bottom: 21rpx;
+}
+
+.more{
+  margin-top: 36rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.more image{
+  width: 29rpx;
+  height: 29rpx;
+  position: relative;
+  top: 2px;
+}

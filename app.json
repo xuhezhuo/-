@@ -1,0 +1,76 @@
+{
+  "pages":[ 
+    "pages/index/index",    
+    "pages/my/person",    
+    "pages/my/avatar",    
+    "pages/login/register",    
+    "pages/index/consultDetail",    
+    "pages/index/itemDetail",    
+    "pages/index/itemOption",    
+    "pages/login/login",    
+    "pages/index/search",    
+    "pages/index/listProduct",    
+    "pages/index/skillProduct",    
+    "pages/index/listItem",       
+    "pages/index/listNews",    
+    "pages/index/listAct",    
+    "pages/my/my",    
+    "pages/my/listMsg",    
+    "pages/my/listOrder",  
+    "pages/my/orderdetail",    
+    "pages/my/unPay",    
+    "pages/my/deliveried",    
+    "pages/my/undelivery",
+    "pages/my/logistics",    
+    "pages/my/setAddress",    
+    "pages/my/addAddress",    
+    "pages/my/listAddress",    
+    "pages/my/contact",
+    "pages/cart/cart",    
+    "pages/cart/buy",    
+    "pages/category/category",  
+    "pages/category/detail",    
+    "pages/logs/logs"
+  ], 
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#4aa7fa",
+    "navigationBarTitleText": "非开挖修复",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#4aa7fa",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/home.png",
+        "selectedIconPath": "pages/images/home_active.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "pages/images/category.png",
+        "selectedIconPath": "pages/images/category_active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "pages/images/cart.png",
+        "selectedIconPath": "pages/images/cart_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "pages/images/my.png",
+        "selectedIconPath": "pages/images/my_active.png"
+      }
+    ]
+  },
+    "networkTimeout": {
+      "request": 10000,
+      "downloadFile": 10000
+    },
+    "debug": true
+}

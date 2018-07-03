@@ -1,0 +1,139 @@
+<view class='container'>
+  <view class='banner1'>
+    <image mode='widthFix' src='{{banner}}'></image>
+  </view>
+
+  <view class='brief border-b'>
+    <view class='name'>
+      {{title}}
+    </view>
+    <view class='pay flex-row'>
+      <view class='col-34'>
+        <text class='text-red'>¥ {{minMoney}}-{{maxMoney}}</text>
+      </view>
+      <view class='col-33'>
+        运费：{{freight}}{{unit}}
+      </view>
+      <view class='col-33 text-right'>
+        48小时内发货
+      </view>
+    </view>
+  </view>
+
+  <view class='category'>
+    <view class='title'>
+      选择产品类型
+    </view>
+    <view class='type'>
+      <view class='item {{ item.productTypeId == productTypeId ? "active" : "" }}' wx:for='{{types}}' wx:key='{{index}}' data-id='{{item.productTypeId}}' data-price='{{item.price}}' data-memo='{{item.memo}}' bindtap='typeClick'>
+        {{item.memo}}
+      </view>
+    </view>
+  </view>
+
+  <view class='wrapper'>
+    <view class='params border-b'>
+      <view class='title'>
+        产品参数
+      </view>
+      <view>
+        产地：{{place}}
+      </view>
+      <view>
+        尺寸：{{size}}
+      </view>
+      <view>
+        材质：{{material}}
+      </view>
+    </view>
+  </view>
+
+  <view class='footer flex-row'>
+    <view class='col-40 text-center cart color-df' bindtap='showClick'>
+      加入购物车
+    </view>
+    <view class='col-20 text-center rel'>
+      <view class='service'>
+        <button class='contact' open-type="contact"></button>
+        <image mode='widthFix' src='../images/serve.png'></image>
+      </view>
+    </view>
+    <view class='col-40 text-center buy color-df' bindtap='buyClick'>
+      立即购买
+    </view>
+  </view>
+
+  <view class='cases'>
+    <image wx:for='{{cases}}' wx:key='{{index}}' mode='widthFix' src='{{item}}'></image>
+  </view>
+
+  <!-- 弹窗背景 防止动画不出现 -->
+  <view class='menu' wx:if="{{show}}" bindtap='showClick'>
+    <view class='bg'>
+    </view>
+  </view>
+
+  <!-- 弹窗内容 -->
+  <view class='content {{show ? "show" : ""}}'>
+    <view class='header flex-row border-b'>
+      <view class='img col-25'>
+        <image mode='widthFix' src='{{banner}}'></image>
+      </view>
+      <view class='col-75 rel'>
+        <view class='price-wrapper'>
+          <view class='price'>
+            <text class='text-red' wx:if='{{totalPrice == ""}}'>¥ {{minMoney}}-{{maxMoney}}</text>
+            <text class='text-red' wx:if='{{totalPrice != ""}}'>¥ {{totalPrice}}</text>
+          </view>
+          <view class='choose' wx:if='{{selectMemo == ""}}'>
+            请选择类型
+          </view>
+          <view class='choose' wx:if='{{selectMemo != ""}}'>
+            已选 “
+            <text>{{selectMemo}}</text>”
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='category2 border-b'>
+      <view class='title'>
+        选择产品类型
+      </view>
+      <view class='type'>
+        <!-- <view class='item {{ id == 0 ? "active" : "" }} br'>
+          全铜通水接头
+        </view>
+        <view class='item {{ id == 1 ? "active" : "" }} br'>
+          万能接+全铜标准接头
+        </view>
+        <view class='item {{ id == 2 ? "active" : "" }} br'>
+          万能接+全铜标准接头
+        </view> -->
+        <view class='item {{ item.productTypeId == productTypeId ? "active" : "" }} br' wx:for='{{types}}' wx:key='{{index}}' data-id='{{item.productTypeId}}' data-price='{{item.price}}' data-memo='{{item.memo}}' bindtap='typeClick'>
+          {{item.memo}}
+        </view>
+      </view>
+    </view>
+    <view class='amount flex-row'>
+      <view class='col-50'>
+        购买数量
+      </view>
+      <view class='col-50 text-right setAmount'>
+        <view class='col-20 text-center'>
+          <image catchtap='minusClick' hidden='{{amount > 1}}' mode='widthFix' src='../images/minus-2.png'></image>
+          <image catchtap='minusClick' hidden='{{amount <= 1}}' mode='widthFix' src='../images/minus-1.png'></image>
+        </view>
+        <view class='col-20 text-center'>
+          <input type='number' value='{{amount}}'></input>
+        </view>
+        <view class='col-20 text-center'>
+          <image catchtap='addClick' mode='widthFix' src='../images/plus2.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='sure text-center'>
+      <button class='btn bg-default' bindtap='addToCart'>确定</button>
+    </view>
+  </view>
+
+</view>

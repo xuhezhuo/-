@@ -1,0 +1,117 @@
+page {
+  background-color: #f7f7f7;
+}
+
+.container {
+  padding-top: 21rpx;
+}
+
+.section {
+  padding-left: 15rpx;
+  background-color: #fff;
+}
+
+.section > .flex-row {
+  padding-top: 32rpx;
+  padding-bottom: 32rpx;
+}
+
+.section > .flex-row .col-40 {
+  padding-left: 21rpx;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 32rpx;
+}
+
+.section > .flex-row .col-60 {
+  padding-right: 64rpx;
+  color: #777;
+  font-size: 32rpx;
+  font-weight: 300;
+}
+
+.btn-wrapper {
+  margin-top: 64rpx;
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
+  display: unset;
+  /* background-color: #fff; */
+  color: #fff;
+  padding: 27rpx 109rpx;
+  font-size: 32rpx;
+  border-radius: 0;
+}
+
+.arrow {
+  width: 15rpx;
+  position: absolute;
+  right: 21rpx;
+  top: 44rpx;
+}
+
+.headImg{
+  width: 108rpx;
+  height: 108rpx;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+ .content {
+  /* background-color: #fff; */
+  background-color: transparent;
+  position: fixed;
+  top: 20%;
+  opacity: 0;
+  width: 100%;
+  margin: auto;
+  transition: 0.3s;
+  z-index: 1000;
+  visibility: hidden;
+} 
+
+.content.show{
+  opacity: 1;
+  visibility: visible;
+}
+
+.content .modifyM{
+  padding: 90rpx 21rpx;   
+  width: 80%;
+  margin: auto;
+  background-color: #fff;
+}
+
+.content .modifyM input{
+  background-color: #f7f7f7;
+  width: 90%;
+  margin: auto;
+  padding: 21rpx 12rpx;
+  font-size: 32rpx;
+}
+
+.phc{
+  font-size: 32rpx;
+  color: #ccc;
+}
+
+.btnW{
+  margin-top: 64rpx;
+}
+
+.btn2{
+  display: unset;
+  padding: 29rpx 160rpx;
+  color: #fff;
+  border-radius: 0;
+  font-size: 32rpx;
+}

@@ -1,0 +1,95 @@
+<view class='container'>
+  <view class='flex-row'>
+    <view class='nav col-18 border-r' style='height: {{height}}px;'>
+      <view style='margin-top: 21rpx;' class='category text-center {{ active == 0 ? "active" : ""}}' data-tab='0' bindtap='tab'>
+        材料
+      </view>
+      <view class='category text-center {{ active == 1 ? "active" : ""}}' data-tab='1' bindtap='tab'>
+        设备
+      </view>
+      <view class='category text-center {{ active == 2 ? "active" : ""}}' data-tab='2' bindtap='tab'>
+        排水
+      </view>
+      <view class='category text-center {{ active == 3 ? "active" : ""}}' data-tab='3' bindtap='tab'>
+        给水
+      </view>
+      <view class='category text-center {{ active == 4 ? "active" : ""}}' data-tab='4' bindtap='tab'>
+        隧道
+      </view>
+      <view class='category text-center {{ active == 5 ? "active" : ""}}' data-tab='5' bindtap='tab'>
+        其他
+      </view>
+      <view class='border bg-default-col' style='top: {{top}}rpx'></view>
+    </view>
+
+    <view class='section col-82'>
+      <scroll-view scroll-y='{{scroll}}' style='height: {{height}}px' scroll-into-view="{{toView}}" scroll-with-animation='true'>
+        <view id="product" class="flex" style='height: {{height}}px'>
+          <view bindtap='openProductDetailWin' class='col-50 item' wx:for='{{productList}}' wx:key='{{index}}' data-id='{{item.productId}}'>
+            <view class='text-center'>
+              <image class='img2' mode='widthFix' src='{{item.banner}}'></image>
+            </view>
+            <view class='text-center title'>
+              {{item.title}}
+            </view>
+          </view>
+        </view>
+
+        <view id="device" class="flex" style='height: {{height}}px'>
+          <view bindtap='openProductDetailWin' class='col-50 item' wx:for='{{deviceList}}' wx:key='{{index}}'  data-id='{{item.productId}}'>
+            <view class='text-center'>
+              <image class='img2' mode='widthFix' src='{{item.banner}}'></image>
+            </view>
+            <view class='text-center title'>
+              {{item.title}}
+            </view>
+          </view>
+        </view>
+
+        <view id="drain" class="flex" style='height: {{height}}px'>
+          <view class='col-50 item' wx:for='{{techList1}}' wx:key='{{index}}' data-id='{{item.skillId}}' bindtap='openDetailWin'>
+            <view class='text-center'>
+              <image class='img2' mode='widthFix' src='{{item.banner}}'></image>
+            </view>
+            <view class='text-center title'>
+              {{item.title}}
+            </view>
+          </view>
+        </view>
+
+        <view id="feedWater" class="flex" style='height: {{height}}px'>
+          <view class='col-50 item' wx:for='{{techList2}}' wx:key='{{index}}' data-id='{{item.skillId}}' bindtap='openDetailWin'>
+            <view class='text-center'>
+              <image class='img2' mode='widthFix' src='{{item.banner}}'></image>
+            </view>
+            <view class='text-center title'>
+              {{item.title}}
+            </view>
+          </view>
+        </view>
+
+        <view id="tunnel" class="flex" style='height: {{height}}px'>
+          <view class='col-50 item' wx:for='{{techList3}}' wx:key='{{index}}' data-id='{{item.skillId}}' bindtap='openDetailWin'>
+            <view class='text-center'>
+              <image class='img2' mode='widthFix' src='{{item.banner}}'></image>
+            </view>
+            <view class='text-center title'>
+              {{item.title}}
+            </view>
+          </view>
+        </view>
+
+        <view id="others" class="flex" style='height: {{height}}px'>
+          <view class='col-50 item' wx:for='{{techList4}}' wx:key='{{index}}' data-id='{{item.skillId}}' bindtap='openDetailWin'>
+            <view class='text-center'>
+              <image class='img2' mode='widthFix' src='{{item.banner}}'></image>
+            </view>
+            <view class='text-center title'>
+              {{item.title}}
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

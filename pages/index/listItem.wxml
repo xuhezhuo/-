@@ -1,0 +1,23 @@
+<view class='container'>
+  <view class='header'>
+    <view class='search bg-default-re'>
+      <input bindinput='bindKeywords' bindconfirm='search' confirm-type="search" placeholder-class="placeholder" placeholder='搜索产品，技术，案例关键词'></input>
+    </view>
+  </view>
+
+  <view class='item-wrapper'>
+    <view class='item flex-row border-b' data-id='{{item.skillId}}' wx:for='{{itemList}}' wx:key='{{index}}' bindtap='openDetailWin'>
+      <view class='col-30 img'>
+        <image mode='widthFix' src='{{item.banner}}'></image>
+      </view>
+      <view class='col-70 content'>
+        <view class='title'>
+          {{item.title}}
+        </view>
+        <view class='brief'>
+          技术简介：{{item.memo}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+<view class='container'>
+  <view class='section'>
+    <view class='name flex-row border-b whitespace'>
+      <view class='col-30 '>
+        收货人：
+      </view>
+      <view class='col-70 text-right'>
+        <input type='text'  bindinput='setReceiver' placeholder='请填写收货人' value='{{receiver}}'></input>
+      </view>
+    </view>
+
+    <view class='mobile flex-row border-b whitespace'>
+      <view class='col-30 '>
+        联系电话：
+      </view>
+      <view class='col-70 text-right'>
+        <input type='number' bindinput='setPhone' placeholder='请填写联系电话' value='{{phone}}'></input>
+      </view>
+    </view>
+
+    <view class='region flex-row border-b whitespace rel'>
+      <view class='col-30 '>
+        所在地区：
+      </view>
+      <view class='col-70 text-right'>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{region[0]}}{{region[1]}}{{region[2]}}
+          </view>
+        </picker>
+      </view>
+      <image mode='widthFix' class='arrow' src='../images/arrow-r2.png'></image>
+    </view>
+
+    <view class='address whitespace'>
+      <textarea placeholder='请填写详细地址' bindinput='setAddress' value='{{address}}'></textarea>
+    </view>
+  </view>
+
+  <view class='footer flex-row'>
+    <view class='col-50 del text-center' bindtap='delClick'>
+      删除
+    </view>
+    <view class='col-50 save text-center' bindtap='setClick'>
+      保存
+    </view>
+  </view>
+</view>

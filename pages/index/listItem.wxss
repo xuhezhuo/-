@@ -1,0 +1,54 @@
+.search {
+  width: 100%;
+  padding-top: 21rpx;
+  padding-bottom: 27rpx;
+}
+
+.search input {
+  background-color: #fff;
+  width: 90%;
+  margin: auto;
+  height: 56rpx;
+  border-radius: 6rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}
+
+input {
+  text-align: center;
+}
+
+.placeholder {
+  font-size: 24rpx;
+}
+
+.item{
+  padding: 21rpx;  
+  padding-bottom: 9rpx;
+}
+
+.item .col-70{
+  padding-left: 21rpx;
+  padding-right: 12rpx;
+}
+
+.item .img{
+  padding:6rpx;
+}
+
+.item .img image{
+  width: 100%;
+}
+
+.item .col-70 .title{
+  padding-top: 12rpx;
+  font-size: 32rpx;
+  color: rgba(0, 0, 0, 0.81);
+}
+
+.item .col-70 .brief{
+  font-size: 29rpx;
+  margin-top: 21rpx;
+  color: #666;
+  font-weight: 300;
+}

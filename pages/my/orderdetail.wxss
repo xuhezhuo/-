@@ -1,0 +1,156 @@
+page {
+  background-color: #f7f7f7;
+}
+
+.container {
+  padding-bottom: 120rpx;
+}
+
+.location {
+  background-color: #fff;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.location .col-90 {
+  padding: 21rpx;
+}
+
+.location .col-10 {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 21rpx;
+}
+
+.location .col-10 image {
+  width: 32rpx;
+}
+
+.content {
+  background-color: #fff;
+  margin-top: 25rpx;
+  padding: 21rpx;
+  font-size: 30rpx;
+}
+
+.item{
+  padding: 15rpx 6rpx;
+}
+
+.item .col-55 {
+  padding-left: 15rpx;
+  /* padding-right: 15rpx; */
+}
+
+.type {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.name {
+  line-height: 40rpx;
+  margin-bottom: 9rpx;
+}
+
+.price {
+  font-weight: 300;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #ccc;
+  font-weight: 300;
+}
+
+.amount {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.shipFee, .total {
+  margin-top: 12rpx;
+}
+
+.total .text-right, .shipFee .text-right {
+  font-size: 32rpx;
+  font-weight: 300;
+}
+
+.img image {
+  width: 100%;
+}
+
+.serviceM {
+  margin-top: 25rpx;
+  background-color: #fff;
+  display: flex;
+  /* position: relative; */
+  /* padding: 12rpx 21rpx;   */
+}
+
+.serviceM .serv {
+  width: 42rpx;
+  position: absolute;
+  left: 16rpx;
+  top: 29rpx;
+}
+
+.serviceM .arrow {
+  width: 18rpx;
+  position: absolute;
+  right: 21rpx;
+  top: 36rpx;
+}
+
+.serviceM button {
+  border-radius: 0;
+  background-color: transparent;
+  display: unset;
+  width: 100%;
+  text-align: left;
+  font-size: 32rpx;
+  color: rgba(0, 0, 0, 0.81);
+  padding-left: 78rpx;  
+  padding-top: 12rpx;
+  padding-bottom: 12rpx;
+}
+
+.orderM {
+  margin-top: 25rpx;
+  background-color: #fff;
+  padding: 21rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.orderM button {
+  display: unset;
+  font-size: 27rpx;
+  line-height: 1;
+  color: #666;
+  padding: 4rpx 32rpx;
+  background-color: #fff;
+  border: solid 1rpx #ccc;
+  border-radius: 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  width: 100%;
+}
+
+.index {
+  border-top: solid 1rpx #4aa7fa;
+  color: #4aa7fa;
+  background-color: #fff;
+}
+
+.delivery {
+  background-color: #4aa7fa;
+  color: #fff;
+}

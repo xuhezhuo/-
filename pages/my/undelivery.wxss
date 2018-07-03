@@ -1,0 +1,65 @@
+page {
+  background-color: #f7f7f7;
+}
+
+.item {
+  background-color: #fff;
+  padding-left: 21rpx;
+  margin-top: 32rpx;
+}
+
+.item:first-child {
+  margin-top: 0;
+}
+
+.brief {
+  padding: 27rpx 21rpx 24rpx 0;
+  font-size: 31rpx;
+}
+
+.name {
+  line-height: 42rpx;
+}
+
+.type {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  color: #888;
+}
+
+.brief .col-75 {
+  padding-left: 21rpx;
+}
+
+.img image {
+  width: 100%;
+}
+
+.status {
+  font-size: 31rpx;
+  padding-top: 17rpx;
+  padding-bottom: 17rpx;
+  padding-right: 27rpx;
+  color: #999;
+}
+
+.total {
+  font-size: 33rpx;
+  margin: 16rpx;
+  margin-bottom: 0;
+}
+
+.delivery {
+  font-size: 28rpx;
+  font-weight: 300;
+}
+
+.sPrice {
+  font-size: 31rpx;
+}
+
+.amount {
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 6rpx;
+}

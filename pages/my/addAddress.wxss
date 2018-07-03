@@ -1,0 +1,52 @@
+page{
+  background-color: #f7f7f7;
+}
+
+.container{
+  font-size: 32rpx;
+  font-weight: 300;
+}
+
+.section{
+  background-color: #fff;
+}
+
+.name, .mobile, .region{
+  /* line-height: 84rpx;   */
+}
+
+.whitespace{
+  /* padding-left: 27rpx; */
+  /* padding-right: 27rpx; */
+  padding: 24rpx 52rpx 24rpx 36rpx;
+}
+
+.arrow{
+  position: absolute;
+  width: 19rpx;
+  right: 12rpx;
+  top: 32rpx;
+}
+
+input{
+  padding-top: 6rpx;
+  /* line-height: 64rpx; */
+}
+
+textarea{
+  width: 100%;
+}
+
+.btn-wrapper{
+  margin-top: 64rpx;
+}
+
+.btn{
+  display: unset;
+  padding: 21rpx 132rpx;
+  color: #fff;
+  background-color: #3782d3;
+  border-radius: 0;
+  font-size: 32rpx;
+
+}

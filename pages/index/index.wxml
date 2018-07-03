@@ -1,0 +1,194 @@
+<view class='container'>
+  <view class='flex-row header bg-df'>
+    <view class='col-15 text-center msg'>
+      <image wx:if='{{isMsg}}' mode='widthFix' src='../images/msg_active.png' bindtap='checkMsg' style='position:relative;top: 7rpx;'></image>    
+      <image wx:if='{{!isMsg}}' mode='widthFix' src='../images/msg.png' bindtap='checkMsg' style='width: 47rpx;position:relative;top: 7rpx;'></image>    
+    </view>
+    <view class='col-70 search'>
+      <input bindtap='openSearchWin' confirm-type="search" placeholder-class="placeholder" disabled='true' placeholder='搜索产品/技术/案例关键词'></input>
+    </view>
+    <view class='col-15 text-center share serv'>
+      <button class='btn' open-type="share"></button>
+      <image mode='widthFix' src='../images/back.png'></image>
+    </view>
+  </view>
+ 
+  <!-- 轮播图  -->
+  <view class='swiper'>
+    <swiper indicator-dots indicator-color='#fff' indicator-active-color='#4aa7fa' autoplay="true" interval="5000" duration="1000">
+       <block wx:for="{{bannerList}}" wx:for-item='banner' wx:key='{{index}}'>
+        <swiper-item>
+          <image data-linktype='{{banner.linkType}}' data-id='{{banner.linkId}}' mode='widthFix' src="{{banner.url}}" class="slide-image" bindtap='bannerClick' />
+        </swiper-item>
+      </block>    
+    </swiper> 
+  </view> 
+
+  <!-- 功能列表 -->
+  <view class='flex-row item-wrapper'>
+    <view class='col-20 text-center' data-type='ZTXF' data-title='整体修复' bindtap='openItemWin'>
+      <view class='img-wrapper'>
+        <image class='img' mode='widthFix' src='../images/repair-All.png'></image>
+      </view>
+      <view class='text-center name'>
+        <text>整体修复</text>
+      </view>
+    </view>
+    <view class='col-20 text-center' data-type='JBXF' data-title='局部修复' bindtap='openItemWin'>
+      <view class='img-wrapper'>
+        <image class='img' mode='widthFix' src='../images/repair-Part.png'></image>
+      </view>
+      <view class='text-center name'>
+        <text>局部修复</text>
+      </view>
+    </view>
+    <view class='col-20 text-center' data-type='SDXF' data-title='隧道修复' bindtap='openItemWin'>
+      <view class='img-wrapper'>
+        <image class='img' mode='widthFix' src='../images/repair-Tunnel.png'></image>
+      </view>
+      <view class='text-center name'>
+        <text>隧道修复</text>
+      </view>
+    </view>
+    <view class='col-20 text-center' data-type='JSXF' data-title='井室修复' bindtap='openItemWin'>
+      <view class='img-wrapper'>
+        <image class='img' mode='widthFix' src='../images/repair-Well.png'></image>
+      </view>
+      <view class='text-center name'>
+        <text>井室修复</text>
+      </view>
+    </view>
+    <view class='col-20 text-center' data-type='DLJG' data-title='堵漏加固' bindtap='openItemWin'>
+      <view class='img-wrapper'>
+        <image class='img' mode='widthFix' src='../images/stuck.png'></image>
+      </view>
+      <view class='text-center name'>
+        <text>堵漏加固</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能列表第二列 -->
+  <view class='flex-row item-wrapper2'>
+    <view class='col-20 text-center' data-type='XYJC' data-title='清淤检测' bindtap='openItemWin'>
+      <view class='img-wrapper'>
+        <image class='img' mode='widthFix' src='../images/test-Dirty.png'></image>
+      </view>
+      <view class='text-center name'>
+        <text>清淤检测</text>
+      </view>
+    </view>
+    <view class='col-20 text-center' data-type='GSJC' data-title='给水检测' bindtap='openItemWin'>
+      <view class='img-wrapper'>
+        <image class='img' mode='widthFix' src='../images/test-Water.png'></image>
+      </view>
+      <view class='text-center name'>
+        <text>给水检测</text>
+      </view>
+    </view>
+    <view class='col-20 text-center' data-type='GSXF' data-title='给水修复' bindtap='openItemWin'>
+      <view class='img-wrapper'>
+        <image class='img' mode='widthFix' src='../images/fix-Water.png'></image>
+      </view>
+      <view class='text-center name'>
+        <text>给水修复</text>
+      </view>
+    </view>
+    <view class='col-20 text-center' data-type='ZLGF' data-title='胀裂管法' bindtap='openItemWin'>
+      <view class='img-wrapper'>
+        <image class='img' mode='widthFix' src='../images/explode-Tunnel.png'></image>
+      </view>
+      <view class='text-center name'>
+        <text>胀裂管法</text>
+      </view>
+    </view>
+    <view class='col-20 text-center' bindtap='openProductWin'>
+      <view class='img-wrapper'>
+        <image class='img' mode='widthFix' src='../images/sale.png'></image>
+      </view>
+      <view class='text-center name'>
+        <text>产品直销</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 招标咨询、行业动态模块 -->
+  <view class='adsM'>
+    <view class='News flex-row border-b'>
+      <view class='col-20'>
+        招标资讯
+      </view>
+      <view class='col-70'>
+        <swiper vertical='true' autoplay="true" interval="4100" duration="1000">
+          <block wx:for="{{consultList}}" wx:key='{{index}}' wx:for-item='consult'>
+            <swiper-item>
+              <text>{{consult.title}}</text>
+            </swiper-item>
+          </block>    
+        </swiper> 
+      </view>
+      <view class='col-10 text-center color-df' bindtap='openNewsWin'>
+        更多
+      </view>
+    </view>
+
+    <view class='News flex-row'>
+      <view class='col-20'>
+        行业动态
+      </view>
+      <view class='col-70'>
+        <swiper vertical='true' autoplay="true" interval="3200" duration="1000">
+          <block wx:for="{{newsList}}" wx:key='{{index}}' wx:for-item='news'>
+            <swiper-item>
+              <text>{{news.title}}</text>
+            </swiper-item>
+          </block>    
+        </swiper> 
+      </view>
+      <view class='col-10 text-center color-df' bindtap='openActWin'>
+        更多
+      </view>
+    </view>
+  </view>
+
+  <!-- 主功能 -->
+  <view class='main flex-row'>
+    <view class='col-50'>
+      <view class='text-center' data-type='PSBH' data-title='排水病害' bindtap='openItemWin'>
+        <image class='img2' mode='widthFix' src='../images/paishui.jpg'></image>
+      </view>
+      <view class='text-center title'>
+        排水病害
+      </view>
+    </view>
+    <view class='col-50' data-type='GSBH' data-title='给水病害' bindtap='openItemWin'>
+      <view class='text-center'>
+        <image class='img2' mode='widthFix' src='../images/jishui.jpg'></image>
+      </view>
+      <view class='text-center title'>
+        给水病害
+      </view>
+    </view>
+  </view>
+
+  <!-- 主功能2 -->
+  <view class='main flex-row'>
+    <view class='col-50'>
+      <view class='text-center' data-type='SDBH' data-title='隧道病害' bindtap='openItemWin'>
+        <image class='img2' mode='widthFix' src='../images/suidao.jpg'></image>
+      </view>
+      <view class='text-center title'>
+        隧道病害
+      </view>
+    </view>
+    <view class='col-50' data-type='QTBH' data-title='其他病害' bindtap='openItemWin'>
+      <view class='text-center'>
+        <image class='img2' mode='widthFix' src='../images/qita.jpg'></image>
+      </view>
+      <view class='text-center title'>
+        其他病害
+      </view>
+    </view>
+  </view>
+
+</view>

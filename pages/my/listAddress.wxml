@@ -1,0 +1,40 @@
+<view class='container'>
+  <view class='item-wrapper'>
+    <!-- 地址列表 -->
+    <radio-group class="radio-group" bindchange="radioChange">
+      <view class='item' wx:for='{{addressList}}' wx:key='{{index}}' style='margin-top: {{index == 0 ? "0" : "32rpx;"}}' data-index='{{index}}' bindtap='addressClick'>
+        <!-- 地址详情 -->
+        <view class='detail border-b'>
+          <view class='flex-row info'>
+            <view class='col-50 name'>
+              收货人：{{item.receiver}}
+            </view>
+            <view class='col-50 text-center mobile'>
+              电话：{{item.phone}}
+            </view>
+          </view>
+          <view class='address'>
+            收货地址：{{item.province + item.city + item.area + item.address}}
+          </view>
+        </view>
+
+        <!-- 操作 -->
+        <view class='setting flex-row'>
+          <view class='col-70'>
+            <label class="radio">
+              <radio color='#3782d4' value="{{index}}" checked="{{item.status == 1}}" /> 设为默认
+            </label>
+          </view>
+          <view class='col-30 text-right' bindtap='setClick' data-id='{{item.addressId}}' >
+            <image class='set' src='../images/set.png'></image>
+            <text class='setText'>编辑</text>
+          </view>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+
+  <view class='add bg-df text-center' bindtap='addClick'>
+    <text>+</text>
+  </view>
+</view>

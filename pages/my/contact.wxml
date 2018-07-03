@@ -1,0 +1,19 @@
+<view class='container'>
+  <view class='section rel'>
+    <view class='wrapper'>
+      <view class='mobile' bindtap='call'>
+        电话：15306004713
+      </view>
+      <view class='qq' bindtap='copyQQ'>
+        QQ： 625342842
+      </view>
+      <view class='wechat' bindtap='copyWechat'>
+        微信： 15306004713
+      </view>
+      <view class='emial' bindtap='copyEmail'>
+        邮箱：625342842@qq.com
+      </view>
+      <image mode='widthFix' class='img' src='../images/post.png'></image>
+    </view>
+  </view>
+</view>

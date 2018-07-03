@@ -1,0 +1,49 @@
+page{
+  background-color: #f7f7f7;
+}
+
+.container{
+  font-size: 32rpx;
+  font-weight: 300;
+}
+
+.section{
+  background-color: #fff;
+}
+
+.whitespace{
+  /* padding-left: 27rpx; */
+  /* padding-right: 27rpx; */
+  padding: 24rpx 52rpx 24rpx 36rpx;
+}
+
+.arrow{
+  position: absolute;
+  width: 19rpx;
+  right: 12rpx;
+  top: 32rpx;
+}
+
+input{
+  padding-top: 6rpx;
+  /* line-height: 64rpx; */
+}
+
+textarea{
+  width: 100%;
+}
+
+.footer{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  font-size: 32rpx;
+}
+
+.save{
+  background-color: #3782d3;
+  color: #fff;
+}

@@ -1,0 +1,28 @@
+page{
+  background-color: #f7f7f7;
+}
+
+.container{
+  padding-top: 32rpx;
+}
+
+.section {
+  width: 94%;
+  background-color: #fff;
+  border-radius: 15rpx;
+  margin: auto;    
+  font-size: 30rpx;
+  color: rgba(0, 0, 0, 0.81);
+  line-height: 72rpx;
+}
+
+.wrapper{
+  padding: 36rpx 42rpx 112rpx;
+}
+
+ .img {
+  position: absolute;
+  width: 270rpx;
+  right: 21rpx;
+  bottom: 12rpx;
+} 

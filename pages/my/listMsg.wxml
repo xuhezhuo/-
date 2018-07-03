@@ -1,0 +1,35 @@
+<view class='container'>
+  <view class='new'>
+    <view class='title border-b color-df'>
+      <image mode='widthFix' src='../images/new.png'></image>
+      未读消息
+    </view>
+    <view class='wrapper'>
+      <view class='item flex-row border-b' wx:for='{{itemList}}' wx:key='{{index}}' data-id='{{item.messageId}}' data-type='{{item.type}}' data-link='{{item.link}}' bindtap='check'>
+        <view class='col-75 text-center brief'>
+          {{item.detail}}
+        </view>
+        <view class='col-25 text-center date'>
+          {{item.createTime}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='history'>
+    <view class='title border-b'>
+      <image mode='widthFix' src='../images/history.png'></image>
+      历史消息
+    </view>
+  </view>
+  <view class='wrapper wrapper2'>
+    <view class='item flex-row border-b' wx:for='{{itemList2}}' wx:key='{{index}}' data-id='{{item.messageId}}' data-type='{{item.type}}' data-link='{{item.link}}' bindtap='check'>
+      <view class='col-75 text-center brief'>
+        {{item.detail}}
+      </view>
+      <view class='col-25 text-center date'>
+        {{item.createTime}}
+      </view>
+    </view>
+  </view>
+</view>

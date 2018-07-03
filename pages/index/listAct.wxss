@@ -1,0 +1,47 @@
+.search {
+  width: 100%;
+  padding-top: 21rpx;
+  padding-bottom: 27rpx;
+}
+
+.search input {
+  background-color: #fff;
+  width: 90%;
+  margin: auto;
+  height: 56rpx;
+  border-radius: 6rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}
+
+input {
+  text-align: center;
+}
+
+.placeholder {
+  font-size: 24rpx;
+}
+
+.banner image {
+  width: 100%;
+}
+
+.item {
+  padding-top: 21rpx;
+  padding-bottom: 21rpx;
+  font-size: 30rpx;
+}
+
+.icon image {
+  width: 38rpx;
+  position: relative;
+  top: 4rpx;
+}
+
+.title {
+  padding-left: 12rpx;
+  padding-right: 12epx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

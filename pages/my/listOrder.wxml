@@ -1,0 +1,53 @@
+<view class='container'>
+  <view class='wrapper'>
+    <view class='item' wx:for='{{orderList}}' wx:for-item='order' wx:key='{{index}}' data-id='{{order.orderId}}' bindtap='openDetailWin'>
+      <view class='brief flex-row border-b' wx:for='{{order.detailList}}' wx:for-item='product' wx:key='{{index}}'>
+        <view class='col-25 img'>
+          <image mode='widthFix' src='{{product.banner}}'></image>
+        </view>
+        <view class='col-75'>
+          <view class='flex-row'>
+            <view class='col-70'>
+              <view class='name'>
+                {{product.productMemo}}
+              </view>
+              <view class='type'>
+                {{product.typeName}}
+              </view>
+            </view>
+            <view class='col-30 text-right'>
+              <view class='sPrice'>
+                <text class='text-red'>¥ {{product.price}}</text>
+              </view>
+              <view class='amount'>
+                x {{product.number}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='total text-right'>
+        合计：
+        <text class='text-red'>¥ {{order.totalMoney}} </text>
+        <text class='delivery'>  (含运费{{order.totalFreight}}元)</text>
+      </view>
+      <view class='status flex-row' wx:if='{{order.status == 2}}'>
+        <view class='col-50'>
+          卖家已发货
+        </view>
+        <view class='col-50 rel'>
+          <button class='btn' catchtap=''>查看物流</button>
+        </view>
+      </view>
+      <view class='status text-right' wx:if='{{order.status == 1}}'>
+        卖家待发货
+      </view>
+      <view class='status' wx:if='{{order.status == 0}}'>
+        <view class='rel text-right'>
+          <button class='btn2' catchtap='cancel' data-id='{{order.orderId}}'>取消</button>
+          <button class='btn2 btn-red' catchtap='pay'>付款</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

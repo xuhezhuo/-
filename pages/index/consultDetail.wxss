@@ -1,0 +1,18 @@
+@import "../wxParse/wxParse.wxss";
+
+.container{
+  padding: 21rpx;
+}
+
+.title{
+  font-size: 32rpx;
+}
+
+.time{
+  font-size: 28rpx;
+  margin-bottom: 32rpx;
+}
+
+.content{
+  font-size: 30rpx;
+}

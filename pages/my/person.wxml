@@ -1,0 +1,99 @@
+<view class='container'>
+  <view class='section'>
+    <!-- 头像 -->
+    <view class='flex-row head border-b rel' style='align-items:center;padding-bottom: 12rpx;padding-top: 27rpx;'>
+      <view class='title col-40'>
+        会员头像
+      </view>
+      <view class='col-60 text-right' bindtap='setImg'>
+        <image mode='widthFix' class='headImg' src='{{headImg ? headImg : "../images/headNo.png"}}'></image>
+      </view>
+      <image mode='widthFix' class='arrow' src='../images/arrow-r2.png' style='top: 72rpx;'></image>
+    </view>
+
+    <!-- 账号 -->
+    <view class='account flex-row border-b rel'>
+      <view class='title col-40'>
+        会员账号
+      </view>
+      <view class='col-60 text-right'>
+        {{account}}
+      </view>
+    </view>
+
+    <!-- 姓名 -->
+    <view class='name flex-row border-b rel'>
+      <view class='title col-40'>
+        姓名
+      </view>
+      <view class='col-60 text-right' bindtap='showClick1'>
+        {{name}}
+      </view>
+      <image mode='widthFix' class='arrow' src='../images/arrow-r2.png'></image>
+    </view>
+
+    <view class='sex flex-row border-b rel'>
+      <view class='title col-40'>
+        性别
+      </view>
+      <view class='col-60 text-right'>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{sexList}}">
+          <view class="picker">
+            {{sex == '1' ? '男' : '女'}}
+          </view>
+        </picker> 
+      </view>
+      <image mode='widthFix' class='arrow' src='../images/arrow-r2.png'></image>
+    </view>
+
+    <view class='firm flex-row rel'>
+      <view class='title col-40'>
+        公司
+      </view>
+      <view class='col-60 text-right' bindtap='showClick2'>
+        {{company}}
+      </view>
+      <image mode='widthFix' class='arrow' src='../images/arrow-r2.png'></image>
+    </view>
+  </view>
+
+  <view class='btn-wrapper'>
+    <button class='btn bg-df' bindtap='LogoutClick'>退出登录</button>
+  </view>
+
+  <!-- 弹窗背景 防止动画不出现 -->
+  <view class='menu' wx:if="{{show1}}" bindtap='showClick1'>
+    <view class='bg'>
+    </view>
+  </view>
+
+    <!-- 弹窗背景 防止动画不出现 -->
+  <view class='menu' wx:if="{{show2}}" bindtap='showClick2'>
+    <view class='bg'>
+    </view>
+  </view>
+
+  <!-- 修改姓名弹窗 -->
+  <view class='content {{show1 ? "show" : ""}}'>
+    <view class='modifyM'>
+      <view class='inputW'>
+        <input placeholder='请输入姓名' value='{{setName}}' placeholder-class='phc' bindinput='setname'></input>
+      </view>
+      <view class='text-center btnW'>
+        <button class='btn2 bg-default' bindtap='setName'>保存</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 公司弹窗 -->
+  <view class='content {{show2 ? "show" : ""}}'>
+    <view class='modifyM'>
+      <view class='inputW'>
+        <input placeholder='请输入公司' value='{{setCompany}}' bindinput='setcompany' placeholder-class='phc'></input>
+      </view>
+      <view class='text-center btnW'>
+        <button class='btn2 bg-default' bindtap='setFirm'>保存</button>
+      </view>
+    </view>
+  </view>
+</view>

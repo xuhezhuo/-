@@ -1,0 +1,44 @@
+<view class='container'>
+  <view class='wrapper'>
+    <view class='item' wx:for='{{orderList}}' wx:for-item='order' wx:key='{{index}}' data-id='{{order.orderId}}' bindtap='openDetailWin'>
+      <view class='brief flex-row border-b' wx:for='{{order.detailList}}' wx:for-item='product' wx:key='{{index}}'>
+        <view class='col-25 img'>
+          <image mode='widthFix' src='{{product.banner}}'></image>
+        </view>
+        <view class='col-75'>
+          <view class='flex-row'>
+            <view class='col-70'>
+              <view class='name'>
+                {{product.productMemo}}
+              </view>
+              <view class='type'>
+                {{product.typeName}}
+              </view>
+            </view>
+            <view class='col-30 text-right'>
+              <view class='sPrice'>
+                <text class='text-red'>¥ {{product.price}}</text>
+              </view>
+              <view class='amount'>
+                x {{product.number}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='total text-right'>
+        合计：
+        <text class='text-red'>¥ {{order.totalMoney}} </text>
+        <text class='delivery'>  (含运费{{order.totalFreight}})</text>
+      </view>
+      <view class='status flex-row'>
+        <view class='col-50'>
+          卖家已发货
+        </view>
+        <view class='col-50 rel'>
+          <button class='btn' data-num='{{order.logisticsNumber}}' catchtap='openLogisticsWin'>查看物流</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

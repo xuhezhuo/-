@@ -1,0 +1,86 @@
+<view class='container'>
+  <view class='bg bg-default-re'>
+  </view>
+
+  <view class='section'>
+    <view class='wrapper'>
+      <view class='header flex-row'>
+        <view class='col-35 rel'>
+          <view class='headImg' bindtap='setImg'>
+            <image wx:if='{{headImg == "" || headImg == null }}' class='headNo' src='../images/headNo.png'></image>
+            <image wx:if='{{headImg != "" && headImg != null}}' class='head' mode='widthFix' src='{{headImg}}'></image>
+          </view>
+        </view>
+        <view class='col-55 mobile'>
+          <button bindtap='openLoginWin' wx:if="{{token == ''}}" class='btn'>点击登录</button>
+          <text wx:if="{{token != ''}}">{{mobile}}</text>
+        </view>
+        <view class='col-10 msgImg'>
+          <image wx:if='{{isMsg}}' mode='widthFix' src='../images/msg_active1.png' bindtap='opengMsgWin'></image>
+          <image wx:if='{{!isMsg}}' mode='widthFix' src='../images/msg1.png' bindtap='opengMsgWin' style='width: 47rpx;'></image>
+        </view>
+      </view>
+
+      <!-- 订单分类 -->
+      <view class='brief flex-row'>
+        <view class='col-25' bindtap='openListOrderWin'>
+          <view class='text-center num  border-r'>
+            {{orderCount}}
+          </view>
+          <view class='text-center title'>
+            我的订单
+          </view>
+        </view>
+        <view class='col-25' bindtap='openUnpayWin'>
+          <view class='text-center num border-r'>
+            {{notPayCount}}
+          </view>
+          <view class='text-center title'>
+            待付款
+          </view>
+        </view>
+        <view class='col-25' bindtap='openUndeliveryWin'>
+          <view class='text-center num border-r'>
+            {{notSendCount}}
+          </view>
+          <view class='text-center title'>
+            待发货
+          </view>
+        </view>
+        <view class='col-25' bindtap='openDeliveriedWin'>
+          <view class='text-center num'>
+            {{sendCount}}
+          </view>
+          <view class='text-center title'>
+            已发货
+          </view>
+        </view>
+      </view>
+
+      <!-- 列表 -->
+      <view class='funcList'>
+        <view class='func border-b rel' bindtap='openPersonWin'>
+          <image class='funcImg' mode='widthFix' src='../images/paper.png' style='width: 28rpx;'></image>
+          个人资料
+          <image class='arrow' mode='widthFix' src='../images/arrow-r2.png'></image>
+        </view>
+        <view class='func border-b rel' bindtap='openAddressWin'>
+          <image class='funcImg' mode='widthFix' src='../images/location.png'></image>
+          收货地址
+          <image class='arrow' mode='widthFix' src='../images/arrow-r2.png'></image>
+        </view>
+        <view class='func border-b rel' bindtap='openContactWin'>
+          <image class='funcImg' mode='widthFix' src='../images/phone.png'></image>
+          联系我们
+          <image class='arrow' mode='widthFix' src='../images/arrow-r2.png'></image>
+        </view>
+        <view class='func rel flex-row text-left' style='padding: 16rpx 12rpx 12rpx'>
+          <image class='funcImg' mode='widthFix' src='../images/service.png' style='margin-right: 0rpx;top: 26rpx;'></image>
+          <button class='contact' open-type="contact">在线客服</button>
+          <image class='arrow' mode='widthFix' src='../images/arrow-r2.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

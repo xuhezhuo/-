@@ -1,0 +1,93 @@
+<view class='container'>
+  <view class='location flex-row'>
+    <view class='col-10'>
+      <image mode='widthFix' src='../images/loaction2.png'></image>
+    </view>
+    <view class='col-90'>
+      <view class='flex-row'>
+        <view class='col-50 name'>
+          收货人：{{receiver}}
+        </view>
+        <view class='col-50 text-right'>
+          {{phone}}
+        </view>
+      </view>
+      <view class='address'>
+        收货地址：{{address}}
+      </view>
+    </view>
+  </view>
+
+  <view class='content'>
+    <view class='item flex-row border-b' wx:for='{{itemList}}' wx:key='{{index}}'>
+      <view class='col-25 img'>
+        <image mode='widthFix' src='{{item.banner}}'></image>
+      </view>
+      <view class='col-55'>
+        <view class='name'>
+          {{item.productMemo}}
+        </view>
+        <view class='type'>
+          {{item.typeName}}
+        </view>
+      </view>
+      <view class='col-20 text-right'>
+        <view class='price'>
+          ¥ {{item.price}}
+        </view>
+        <!-- <view class='oldPrice'>
+          34.25
+        </view> -->
+        <view class='amount'>
+          x {{item.number}}
+        </view>
+      </view>
+    </view>
+    <view class='shipFee flex-row'>
+      <view class='col-50'>
+        运费：
+      </view>
+      <view class='col-50 text-right'>
+        {{totalFreight}}
+      </view>
+    </view>
+    <view class='total flex-row'>
+      <view class='col-50'>
+        实付款
+      </view>
+      <view class='col-50 text-right text-red'>
+        ¥ {{totalMoney}}
+      </view>
+    </view>
+  </view>
+
+  <view class='serviceM rel'>
+    <image mode='widthFix' class='serv' src='../images/serv.png'></image>
+    <button class='contact' open-type="contact">联系客服</button>
+    <image mode='widthFix' class='arrow' src='../images/arrow-r2.png'></image>
+  </view>
+
+  <view class='orderM'>
+    <view class='flex-row'>
+      <view class='col-70'>
+        订单编号：{{orderNumber}}
+      </view>
+      <view class='col-30 text-right'>
+        <button bindtap='copyClick'>复制</button>
+      </view>
+    </view>
+    <view class='time'>
+      付款时间：{{createTime}}
+    </view>
+  </view>
+
+  <view class='footer flex-row'>
+    <view class='col-50 text-center index' bindtap='openIndexWin'>
+      返回首页
+    </view>
+    <view class='col-50 text-center delivery' bindtap='openLogisticsWin'>
+      查看物流
+    </view>
+  </view>
+
+</view>

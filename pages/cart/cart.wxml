@@ -1,0 +1,74 @@
+<view class='container' wx:if='{{token != "" }}'>
+  <view class='item-wrapper'>
+    <checkbox-group bindchange="checkboxChange">
+      <view style='left: -{{item.left}}px' class='item flex-row' wx:for='{{itemList}}' wx:key='{{index}}' bindtouchstart="touchStart" bindtouchmove="touchM" data-index='{{index}}' bindtouchend="touchE">
+        <view class='remove text-center bg-red' catchtap='del' data-id='{{item.shopId}}'>
+          <image mode='widthFix' src='../images/bin.png'></image>
+        </view>
+       <!--   -->
+        <view class='col-10 checkbox' data-index='{{index}}' bindtap='setCheck'>
+          <checkbox color='#fff' value="{{item.id}}" checked="{{item.checked}}"/>{{item.value}}
+          <icon class="weui-icon-checkbox_success" color='#4aa7fa' type="success" size="23" wx:if="{{item.checked}}"></icon>
+        </view>
+        <view class='cover col-25'>
+          <image mode='widthFix' src='{{item.banner}}'></image>
+        </view>
+        <view class='detail col-65'>
+          <view class='name' data-id='{{item.productId}}' bindtap='openDetailWin'>
+            {{item.memo}}
+          </view>
+          <view class='model'>
+            {{item.typeName}}            
+          </view>
+          <view class='flex-row'>
+            <view class='col-30 sPrice'>
+              <text class='text-red'>¥ {{item.price}}</text>
+            </view>
+            <view class='amount col-70 text-right flex-row'>
+              <view class='col-35'>
+              </view>              
+              <view class='col-20 text-center' data-id='{{item.shopId}}' bindtap='minusClick' data-index='{{index}}'>
+                <image wx:if='{{item.number <= 1}}' mode='widthFix' src='../images/minus_dis.png'></image>
+                <image wx:if='{{item.number > 1}}' mode='widthFix' src='../images/minus.png'></image>
+              </view>
+              <view  class='col-20 text-center'>
+                <text>{{item.number}}</text>
+              </view>
+              <view  class='col-20 text-center' data-id='{{item.shopId}}' bindtap='plusClick' data-index='{{index}}'>
+                <image mode='widthFix' src='../images/plus.png'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </checkbox-group>
+  </view>
+
+  <view class='total flex-row' wx:if='{{ token != ""}}'>
+    <view class='col-30'>
+    </view>
+    <view class='col-40 text-right price'>
+      合计：<text class='text-red'>{{totalPrice}}</text> 元
+    </view>
+    <view class='col-30 text-center check'>
+      <button class='bg-default-col btn' bindtap='buyClick'>去结算（{{total}}）</button>
+    </view>
+  </view>
+</view>
+
+<view wx:if='{{itemList.length == 0 && token != "" }}' class='empty text-center'>
+  <image mode='widthFix' src='../images/cart_unLogin.png'></image>
+  <view class='notice'>
+    <text>去挑点什么吧~</text>
+  </view>
+</view>
+
+<view wx:if='{{token == "" }}' class='unLogin text-center'>
+  <view>
+    <image mode='widthFix' src='../images/cart_unLogin.png'></image>
+  </view>
+  <view class='noLogin'>
+    <text>未登录</text>
+  </view>
+  <button bindtap='Login'>登录</button>
+</view>

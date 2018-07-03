@@ -1,0 +1,34 @@
+page{
+  background-color: #f7f7f7;
+}
+
+.wrapper{
+  margin-top: 21rpx;
+  background-color: #fff;
+  padding-left: 15rpx;
+}
+
+.btn-wrapper{
+  margin-top: 78rpx;
+}
+
+.btn{
+  display: unset;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 0;
+  padding: 24rpx 120rpx;
+  background-color: #3782d3;
+}
+
+ .input{
+  padding-top: 27rpx ;
+  padding-bottom: 27rpx;
+  padding-right: 32rpx;
+  padding-left: 21rpx;
+  font-size: 32rpx;
+} 
+
+.placeholder{
+  /* color: #000; */
+}
