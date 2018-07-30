@@ -19,6 +19,7 @@
 
 .slide-image{
   width: 100%;
+  height: 320rpx;
 }
 
 /* .search{
@@ -68,12 +69,13 @@ input{
 }
 
 .News{
-  height: 60rpx;
-  line-height: 60rpx;
+  /* height: 60rpx;
+  line-height: 60rpx; */
 }
 
 .adsM swiper{
-  height: 56rpx;
+  /* height: 56rpx; */
+  height: 95rpx;
   overflow: hidden;
 }
 
@@ -82,9 +84,14 @@ input{
   color: #999;
   padding-left: 6rpx;
   padding-right: 6rpx;
-  overflow: hidden;
+  /* overflow: hidden;
   text-overflow:ellipsis;
-  white-space: nowrap;
+  white-space: nowrap; */
+     overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
 }
 
 .adsM .col-20{

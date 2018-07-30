@@ -2,14 +2,14 @@
 <view class='container'>
   <view class='header'>
     <view class='col-7 search.bg-default-re'>
-      <input bindinput='bindKeyword' bindconfirm='searchT' confirm-type="search" placeholder-class="placeholder" placeholder='搜索产品，技术，案例关键词'></input>
+      <input bindinput='bindKeyword' bindconfirm='searchT' confirm-type="search" placeholder-class="placeholder" placeholder='搜索产品/技术/案例关键词'></input>
     </view>
   </view>
 
  <view class='item-wrapper'>
     <view class='item flex-row border-b' data-type='{{item.searchType}}' data-id='{{item.searchId}}' wx:for='{{itemList}}' wx:key='{{index}}' bindtap='openDetailWin'>
       <view class='col-30 img'>
-        <image mode='widthFix' src='{{item.banner}}'></image>
+        <image src='{{item.banner}}'></image>
       </view>
       <view class='col-70 content'>
         <view class='title'>

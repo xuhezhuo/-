@@ -34,7 +34,7 @@
       <view class='status'>
         <view class='rel text-right'>
           <button class='btn2' catchtap='cancel' data-id='{{order.orderId}}'>取消</button>
-          <button class='btn2 btn-red' catchtap='pay'>付款</button>
+          <button data-num='{{order.orderNumber}}' data-money='{{order.totalMoney}}' class='btn2 btn-red' catchtap='pay'>付款</button>
         </view>
       </view>
     </view>

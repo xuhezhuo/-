@@ -22,6 +22,20 @@ Page({
     techList4: []    
   }, 
 
+  MorePClick: function(){
+    wx.navigateTo({
+      url: '../index/listProduct'
+    })
+  },
+
+  openItemWin: e => {
+    var keyword = e.currentTarget.dataset.type;
+    var title = e.currentTarget.dataset.title;
+    wx.navigateTo({
+      url: '../index/listItem?keyword=' + keyword + "&title=" + title
+    })
+  },
+
   openProductDetailWin: function(e){
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
@@ -235,7 +249,7 @@ Page({
         "keywords": "",
         "page": '1',
         "size": '10',
-        "type": 'PSBH'
+        "type": 'PS'
       }
       wx.request({
         url: webhost + "skill/list",
@@ -284,7 +298,7 @@ Page({
         "keywords": "",
         "page": '1',
         "size": '10',
-        "type": 'GSBH'
+        "type": 'GS'
       }
       wx.request({
         url: webhost + "skill/list",
@@ -333,7 +347,7 @@ Page({
         "keywords": "",
         "page": '1',
         "size": '10',
-        "type": 'SDBH'
+        "type": 'SD'
       }
       wx.request({
         url: webhost + "skill/list",
@@ -382,7 +396,7 @@ Page({
         "keywords": "",
         "page": '1',
         "size": '10',
-        "type": 'QTBH'
+        "type": 'QT'
       }
       wx.request({
         url: webhost + "skill/list",
@@ -425,13 +439,6 @@ Page({
         }
       })
     }
-
-    listProduct();
-    listDevice();
-    listTech1();
-    listTech2();
-    listTech3();
-    listTech4();
   },
 
   onReady: function () {
@@ -439,7 +446,13 @@ Page({
   },
 
   onShow: function () {
-  
+    var that = this;
+    listProduct();
+    listDevice();
+    listTech1();
+    listTech2();
+    listTech3();
+    listTech4();
   },
 
  

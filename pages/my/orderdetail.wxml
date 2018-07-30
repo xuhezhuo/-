@@ -4,13 +4,11 @@
       <image mode='widthFix' src='../images/loaction2.png'></image>
     </view>
     <view class='col-90'>
-      <view class='flex-row'>
-        <view class='col-50 name'>
-          收货人：{{receiver}}
-        </view>
-        <view class='col-50 text-right'>
-          {{phone}}
-        </view>
+      <view class='name'>
+        收货人：{{receiver}}
+      </view>
+      <view class='phone'>
+        电话：{{phone}}
       </view>
       <view class='address'>
         收货地址：{{address}}
@@ -81,7 +79,7 @@
     </view>
   </view>
 
-  <view class='footer flex-row'>
+  <view class='footer flex-row' wx:if='{{status != 0}}'>
     <view class='col-50 text-center index' bindtap='openIndexWin'>
       返回首页
     </view>
@@ -89,5 +87,15 @@
       查看物流
     </view>
   </view>
+
+  <view class='footer flex-row' wx:if='{{status == 0}}'>
+    <view class='col-50 text-center index' bindtap='cancel'>
+      取消订单
+    </view>
+    <view class='col-50 text-center delivery' bindtap='pay'>
+      付款
+    </view>
+  </view>
+
 
 </view>

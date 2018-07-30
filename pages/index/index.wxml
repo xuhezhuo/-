@@ -18,7 +18,7 @@
     <swiper indicator-dots indicator-color='#fff' indicator-active-color='#4aa7fa' autoplay="true" interval="5000" duration="1000">
        <block wx:for="{{bannerList}}" wx:for-item='banner' wx:key='{{index}}'>
         <swiper-item>
-          <image data-linktype='{{banner.linkType}}' data-id='{{banner.linkId}}' mode='widthFix' src="{{banner.url}}" class="slide-image" bindtap='bannerClick' />
+          <image data-linktype='{{banner.linkType}}' data-id='{{banner.linkId}}' src="{{banner.url}}" class="slide-image" bindtap='bannerClick' />
         </swiper-item>
       </block>    
     </swiper> 
@@ -132,7 +132,7 @@
       </view>
     </view>
 
-    <view class='News flex-row'>
+    <!-- <view class='News flex-row'>
       <view class='col-20'>
         行业动态
       </view>
@@ -148,7 +148,7 @@
       <view class='col-10 text-center color-df' bindtap='openActWin'>
         更多
       </view>
-    </view>
+    </view> -->
   </view>
 
   <!-- 主功能 -->

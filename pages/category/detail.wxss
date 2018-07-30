@@ -2,11 +2,11 @@ page {
   background-color: #f7f7f7;
 }
 
-.container{
+.container {
   padding-bottom: 170rpx;
 }
 
-.banner1{
+.banner1 {
   line-height: 0;
 }
 
@@ -146,7 +146,8 @@ page {
 }
 
 .content .header {
-  padding-bottom: 12rpx;
+  padding-bottom: 21rpx;
+  padding-top: 21rpx;
 }
 
 .header .col-75 {
@@ -215,10 +216,16 @@ page {
   width: 52rpx;
 }
 
-.cases{
+.cases {
   margin-top: 21rpx;
 }
 
-.cases image{
+.cases image {
   width: 100%;
+}
+
+.pay2 {
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  color: #666;
 }

@@ -8,9 +8,18 @@
       {{title}}
     </view>
     <view class='pay flex-row'>
-      <view class='col-34'>
-        <text class='text-red'>¥ {{minMoney}}-{{maxMoney}}</text>
+      <view class='col-90'>
+        <view wx:if='{{typeT == 2}}'>
+          <text>{{discuss}}</text>
+        </view>
+        <view wx:if='{{typeT != 2}}'>
+          <text class='text-red' wx:if='{{totalPrice == "" && minMoney != null  }}'>¥ {{minMoney}}-{{maxMoney}}</text>
+          <text class='text-red' wx:if='{{totalPrice == "" && minMoney == null  }}'>¥ {{price}}</text>
+          <text class='text-red' wx:if='{{totalPrice != ""}}'>¥ {{sellPrice}}</text>
+        </view>
       </view>
+    </view>
+    <view class='flex-row pay2'>
       <view class='col-33'>
         运费：{{freight}}{{unit}}
       </view>
@@ -25,7 +34,8 @@
       选择产品类型
     </view>
     <view class='type'>
-      <view class='item {{ item.productTypeId == productTypeId ? "active" : "" }}' wx:for='{{types}}' wx:key='{{index}}' data-id='{{item.productTypeId}}' data-price='{{item.price}}' data-memo='{{item.memo}}' bindtap='typeClick'>
+      <view class='item {{ item.productTypeId == productTypeId ? "active" : "" }}' wx:for='{{types}}' wx:key='{{index}}' data-id='{{item.productTypeId}}' data-price='{{item.price}}' data-memo='{{item.memo}}' data-discuss='{{item.discuss}}' data-type='{{item.type}}'
+        bindtap='typeClick'>
         {{item.memo}}
       </view>
     </view>
@@ -100,16 +110,8 @@
         选择产品类型
       </view>
       <view class='type'>
-        <!-- <view class='item {{ id == 0 ? "active" : "" }} br'>
-          全铜通水接头
-        </view>
-        <view class='item {{ id == 1 ? "active" : "" }} br'>
-          万能接+全铜标准接头
-        </view>
-        <view class='item {{ id == 2 ? "active" : "" }} br'>
-          万能接+全铜标准接头
-        </view> -->
-        <view class='item {{ item.productTypeId == productTypeId ? "active" : "" }} br' wx:for='{{types}}' wx:key='{{index}}' data-id='{{item.productTypeId}}' data-price='{{item.price}}' data-memo='{{item.memo}}' bindtap='typeClick'>
+        <view class='item {{ item.productTypeId == productTypeId ? "active" : "" }} br' wx:for='{{types}}' wx:key='{{index}}' data-id='{{item.productTypeId}}' data-price='{{item.price}}' data-memo='{{item.memo}}' data-discuss='{{item.discuss}}' data-type='{{item.type}}'
+          bindtap='typeClick'>
           {{item.memo}}
         </view>
       </view>

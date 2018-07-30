@@ -1,12 +1,21 @@
 <view class='container'>
   <!-- 视频模块 -->
   <view hidden='{{active == 2}}' class='video Moudel' wx:for='{{videoList}}' wx:key='{{index}}'>
-      <video src="{{item}}"></video>
+    <video src="{{item}}" custom-cache="{{false}}"></video>
+
   </view>
-  
+  <view hidden='{{active == 2}}' style='margin-top: 70%;'>
+    <view class='nofind text-center' wx:if='{{videoList.length == 0}}'>
+      暂无相关视频
+    </view>
+  </view>
+
   <!-- 案例模块 -->
-  <view class='cases Moudel'  hidden='{{active == 1}}'>
-    <image mode='widthFix' src='{{cases}}'></image>
+  <view class='cases Moudel' hidden='{{active == 1}}'>
+    <image mode='widthFix' src='{{cases}}' style='{{load ? "  opacity: 1;" : "  opacity: 0;"}}' bindload='loaded'></image>
+    <view class='nofind text-center' wx:if='{{cases == null}}'>
+      暂无相关案例
+    </view>
   </view>
 
   <!-- 底部栏 -->
@@ -15,13 +24,13 @@
       <view class='img'>
         <image style='width: 40rpx;' mode='widthFix' src='../images/video_tab.png'></image>
       </view>
-      <view class='tabText color-df'> 
-        视频相关
+      <view class='tabText color-df'>
+        相关视频
       </view>
     </view>
     <view class='col-25 text-center' data-tab='2' bindtap='tabClick'>
       <view class='img'>
-        <image mode='widthFix' style='width: 32rpx;margin-top:-2rpx;'  src='../images/paper_tab.png'></image>      
+        <image mode='widthFix' style='width: 32rpx;margin-top:-2rpx;' src='../images/paper_tab.png'></image>
       </view>
       <view class='tabText color-df'>
         经典案例
@@ -29,7 +38,7 @@
     </view>
     <view class='col-25 text-center' bindtap='openProductWin'>
       <view class='img'>
-        <image mode='widthFix' src='../images/tool_tab.png'></image>      
+        <image mode='widthFix' src='../images/tool_tab.png'></image>
       </view>
       <view class='tabText color-df'>
         材料设备
@@ -38,7 +47,7 @@
     <view class='col-25 text-center serv'>
       <button class='contact' open-type="contact"></button>
       <view class='img'>
-        <image mode='widthFix' src='../images/serv_tab.png'></image>      
+        <image mode='widthFix' src='../images/serv_tab.png'></image>
       </view>
       <view class='tabText color-df'>
         工程资讯

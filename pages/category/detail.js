@@ -5,6 +5,7 @@ var getDetail;
 Page({
   data: {
     token: '',
+    userId: '',
     productId: '',
     banner: '',
     cases: [],
@@ -13,6 +14,8 @@ Page({
     material: '',
     maxMoney: '',
     memo: '',
+    typeT: 0,
+    discuss: '',
     minMoney: '',
     place: '',
     price: '',
@@ -40,6 +43,9 @@ Page({
   },
 
   addClick: function() {
+    if (this.data.typeT == 2) {
+      return false;
+    }
     this.setData({
       amount: this.data.amount + 1,
       totalPrice: this.data.sellPrice * (this.data.amount + 1)
@@ -47,6 +53,9 @@ Page({
   },
 
   minusClick: function() {
+    if (this.data.typeT == 2) {
+      return false;
+    }
     if (this.data.amount > 1) {
       this.setData({
         amount: this.data.amount - 1,
@@ -78,6 +87,15 @@ Page({
       wx.showModal({
         title: '提示',
         content: '请先选择类型',
+        confirmColor: '#4aa7fa',
+        showCancel: false
+      })
+      return false;
+    }
+    if (that.data.typeT == 2) {
+      wx.showModal({
+        title: '提示',
+        content: '价格面议，请联系客服',
         confirmColor: '#4aa7fa',
         showCancel: false
       })
@@ -141,12 +159,26 @@ Page({
     var productTypeId = e.currentTarget.dataset.id;
     var price = +e.currentTarget.dataset.price;
     var memo = e.currentTarget.dataset.memo;
-    that.setData({
-      productTypeId: productTypeId,
-      sellPrice: price,
-      totalPrice: price * that.data.amount,
-      selectMemo: memo
-    })
+    var discuss = e.currentTarget.dataset.discuss;
+    var typeT = +e.currentTarget.dataset.type;
+    if(typeT == 2){
+      that.setData({
+        productTypeId: productTypeId,
+        selectMemo: memo,
+        discuss: discuss,
+        typeT: typeT
+      })
+    } else{
+      that.setData({
+        productTypeId: productTypeId,
+        sellPrice: price,
+        totalPrice: price * that.data.amount,
+        selectMemo: memo,
+        discuss: discuss,
+        typeT: typeT
+      })
+    }
+   
   },
 
   // 立即购买
@@ -171,6 +203,15 @@ Page({
       wx.showModal({
         title: '提示',
         content: '请先选择类型',
+        confirmColor: '#4aa7fa',
+        showCancel: false
+      })
+      return false;
+    }
+    if(that.data.typeT == 2){
+      wx.showModal({
+        title: '提示',
+        content: '价格面议，请联系客服',
         confirmColor: '#4aa7fa',
         showCancel: false
       })
@@ -206,29 +247,45 @@ Page({
       var data = {
 
       };
+      if (that.data.userId != '') {
+        data.userId = that.data.userId
+      }
       wx.request({
         url: webhost + "toDetail?id=" + that.data.productId,
         data: data,
         method: 'GET',
+        complete: function(res){
+          console.log(res);
+        },
         success: function(res) {
           switch (+res.data.code) {
             // case 0:
-            default: that.setData({
-              banner: res.data.banner,
-              cases: res.data.cases,
-              freight: res.data.freight,
-              logisticMemo: res.data.logisticMemo,
-              material: res.data.material,
-              maxMoney: res.data.maxMoney,
-              memo: res.data.memo,
-              minMoney: res.data.minMoney,
-              place: res.data.place,
-              price: res.data.price,
-              productId: res.data.productId,
-              size: res.data.size,
-              title: res.data.title,
-              types: res.data.types
-            })
+            default: 
+              that.setData({
+                banner: res.data.banner,
+                cases: res.data.cases,
+                freight: res.data.freight,
+                logisticMemo: res.data.logisticMemo,
+                material: res.data.material,
+                maxMoney: res.data.maxMoney,
+                memo: res.data.memo,
+                minMoney: res.data.minMoney,
+                place: res.data.place,
+                price: res.data.price,
+                productId: res.data.productId,
+                size: res.data.size,
+                title: res.data.title,
+                types: res.data.types
+              })
+              for (var i = 0; i < res.data.types.length; i++){
+                if (res.data.types[i].type == 2){
+                  that.setData({
+                    typeT: 2,
+                    discuss: '面议'
+                  })
+                  break;
+                }
+              }
             break;
             case 401:
                 wx.showModal({
@@ -260,21 +317,21 @@ Page({
         }
       })
     }
-
-    getDetail();
   },
 
   onShow: function() {
     var that = this;
     if (app.globalData.token != '') {
       that.setData({
-        token: app.globalData.token
+        token: app.globalData.token,
+        userId: app.globalData.userId
       })
     } else {
       that.setData({
         token: ''
       })
     }
+    getDetail();    
   },
 
   onShareAppMessage: function() {

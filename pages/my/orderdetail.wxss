@@ -48,7 +48,7 @@ page {
   color: #999;
 }
 
-.name {
+.name, .phone {
   line-height: 40rpx;
   margin-bottom: 9rpx;
 }

@@ -5,14 +5,15 @@ var skillId = '';
 
 Page({
   data: {
-    detail: ''
+    detail: '',
+    load: false
   },
 
   openTabWin: function(e){
     var that = this;
     var tab = e.currentTarget.dataset.tab;
     wx.navigateTo({
-      url: './itemOption?tab=' + tab
+      url: './itemOption?tab=' + tab + '&id=' + skillId
     })
   },
 
@@ -22,12 +23,24 @@ Page({
     })
   },
 
+  loaded: function(){
+    var that = this;
+    that.setData({
+      load: true
+    })
+    wx.hideLoading();
+  },
+
   onLoad: function (options) {
     var that = this;
 
     if (options.id) {
       skillId = options.id;
     }
+
+    wx.showLoading({
+      title: '加载中'
+    })
 
     getItem = () => {
       wx.request({
@@ -79,5 +92,9 @@ Page({
 
   onShow: function () {
   
+  },
+  
+  onShareAppMessage: function (res) {
+
   }
 })

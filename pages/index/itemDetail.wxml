@@ -1,7 +1,7 @@
 <view class='container'>
   <!-- 细节模块 -->
   <view class='detail Moudel'>
-    <image mode='widthFix' src='{{detail}}'></image>  
+    <image class='img' mode='widthFix' src='{{detail}}' style='{{load ? "  opacity: 1;" : "  opacity: 0;"}}' bindload='loaded'></image>  
   </view>
 
   <!-- 底部栏 -->
@@ -11,7 +11,7 @@
         <image style='width: 40rpx;' mode='widthFix' src='../images/video_tab.png'></image>
       </view>
       <view class='tabText color-df'> 
-        视频相关
+        相关视频
       </view>
     </view>
     <view class='col-25 text-center' data-tab='2' bindtap='openTabWin'>

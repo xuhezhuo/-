@@ -22,33 +22,39 @@ input {
   font-size: 24rpx;
 }
 
-.item{
-  padding: 21rpx;  
-  padding-bottom: 9rpx;
+.item {
+  padding: 12px 21rpx 11rpx;
 }
 
-.item .col-70{
+.item .col-70 {
   padding-left: 21rpx;
   padding-right: 12rpx;
 }
 
-.item .img{
-  padding:6rpx;
+.item .img {
+  padding: 6rpx;
 }
 
-.item .img image{
-  width: 100%;
+.img2 {
+  width: 201rpx;
+  height: 134rpx;
+  border: solid 1rpx #ccc;
 }
 
-.item .col-70 .title{
-  padding-top: 12rpx;
+.item .col-70 .title {
+  /* padding-top: 12rpx; */
   font-size: 32rpx;
   color: rgba(0, 0, 0, 0.81);
 }
 
-.item .col-70 .brief{
+.item .col-70 .brief {
   font-size: 29rpx;
-  margin-top: 21rpx;
+  margin-top: 7rpx;
   color: #666;
   font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }

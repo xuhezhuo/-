@@ -17,6 +17,14 @@ Page({
     })
   },
 
+  loaded: function () {
+    var that = this;
+    that.setData({
+      load: true
+    })
+    wx.hideLoading();
+  },
+  
   tabClick: function(e){
     var that = this;
     var tab = +e.currentTarget.dataset.tab;
@@ -25,7 +33,7 @@ Page({
         active: 1
       })
       wx.setNavigationBarTitle({
-        title: '视频相关'
+        title: '相关视频'
       })
     } else if ( tab == 2 ) {
       that.setData({
@@ -40,8 +48,19 @@ Page({
   onLoad: function(options) {
     var that = this;
 
+    wx.showLoading({
+      title: '加载中'
+    })
+
+    setTimeout(function(){
+      that.setData({
+        load: true
+      })
+      wx.hideLoading();
+    },1000)
+
     if (options.id) {
-      skillId = options.keyword;
+      skillId = options.id;
     }
 
     if (options.tab) {
@@ -121,6 +140,10 @@ Page({
   },
 
   onReachBottom: function() {
+
+  },
+
+  onShareAppMessage: function (res) {
 
   }
 })

@@ -139,9 +139,7 @@ Page({
         }
       })
     };
-    
-    getBanner();
-
+  
     getMsg = () => {
       wx.request({
         url: webhost + "message/hasUnread",
@@ -198,6 +196,7 @@ Page({
         })
       }
     },200);
+    getBanner();    
   },
 
   onShareAppMessage: function (res) {

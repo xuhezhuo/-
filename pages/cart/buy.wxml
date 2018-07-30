@@ -4,21 +4,19 @@
       <image class='location' mode='widthFix' src='../images/loaction2.png'></image>
     </view>
     <view class='col-80' wx:if='{{hasAddress}}'>
-      <view class='flex-row'>
-        <view class='col-45'>
-          收货人：{{receiver}}
-        </view>
-        <view class='col-55 text-right'>
-          电话：{{phone}}
-        </view>
+      <view class='name'>
+        收货人：{{receiver}}
+      </view>
+      <view class='phone'>
+        电话：{{phone}}
       </view>
       <view class='address'>
         收货地址：{{province + city + area + stress + address}}
       </view>
     </view>
-    <view class='col-80' wx:if='{{!hasAddress}}' style='line-height:100rpx;'> 
+    <view class='col-80' wx:if='{{!hasAddress}}' style='line-height:100rpx;'>
       还没添加地址哦
-    </view> 
+    </view>
     <view class='col-10 text-center'>
       <image class='arrow' mode='widthFix' src='../images/arrow-r2.png'></image>
     </view>
@@ -55,10 +53,12 @@
 
   <view class='total flex-row'>
     <view class='col-30 delivery'>
-      运费：<text class='text-red'>{{totalFreight}}</text> 元      
+      运费：
+      <text class='text-red'>{{totalFreight}}</text> 元
     </view>
     <view class='col-40 text-right price'>
-      合计：<text class='text-red'>{{totalMoney}}</text> 元
+      合计：
+      <text class='text-red'>{{totalMoney}}</text> 元
     </view>
     <view class='col-30 text-center check'>
       <button class='bg-default-col btn' bindtap='addOrder'> 提交订单 </button>

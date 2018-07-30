@@ -25,7 +25,7 @@
               <radio color='#3782d4' value="{{index}}" checked="{{item.status == 1}}" /> 设为默认
             </label>
           </view>
-          <view class='col-30 text-right' bindtap='setClick' data-id='{{item.addressId}}' >
+          <view class='col-30 text-right' catchtap='setClick' data-id='{{item.addressId}}' >
             <image class='set' src='../images/set.png'></image>
             <text class='setText'>编辑</text>
           </view>

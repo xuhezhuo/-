@@ -72,6 +72,7 @@ Page({
               duration: 1200
             })
             app.globalData.token = res.data.data.token;
+            app.globalData.userId = res.data.data.user.userId;
             wx.setStorage({
               key: 'token',
               data: res.data.data.token

@@ -5,8 +5,16 @@ var getProduct;
 Page({
   data: {
     tab: 1,
-    search: '',
-    productList: [1,2,3,4,5]
+    pageNo: 1,
+    pageSize: 10,
+    keyword: '',
+    productList: []
+  },
+
+  bindKeyword: function (e) {
+    this.setData({
+      keyword: e.detail.value
+    })
   },
 
   tabClick: function(e) {
@@ -16,10 +24,21 @@ Page({
       return false;
     } else{
       that.setData({
+        paggNo: 1,
+        productList: [],
         tab: tab
       })
       getProduct();
     }
+  },
+
+  search: function () {
+    var that = this;
+    that.setData({
+      pageNo: 1,
+      productList: []
+    })
+    getProduct();
   },
 
   openDetailWin: function(e){
@@ -32,12 +51,11 @@ Page({
   onLoad: function (options) {
     var that = this;
 
-
     getProduct = () => {
       var data = {
-        "keywords": that.data.search,
-        "page": "1",
-        "size": "10",
+        "keywords": that.data.keyword,
+        "page": that.data.pageNo,
+        "size": that.data.pageSize,
         'type': that.data.tab
       }
       wx.request({
@@ -51,7 +69,7 @@ Page({
           switch (+res.data.code) {
             case 0:
               that.setData({
-                productList: res.data.data  //动态列表
+                productList: (that.data.productList).concat(res.data.data)  //动态列表
               })
               break;
             case 401:
@@ -92,6 +110,10 @@ Page({
   },
 
   onReachBottom: function () {
-  
+    var that = this;
+    that.setData({
+      pageNo: that.data.pageNo + 1
+    })
+    getProduct();
   }
 })

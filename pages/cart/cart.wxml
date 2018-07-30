@@ -11,7 +11,7 @@
           <icon class="weui-icon-checkbox_success" color='#4aa7fa' type="success" size="23" wx:if="{{item.checked}}"></icon>
         </view>
         <view class='cover col-25'>
-          <image mode='widthFix' src='{{item.banner}}'></image>
+          <image src='{{item.banner}}'></image>
         </view>
         <view class='detail col-65'>
           <view class='name' data-id='{{item.productId}}' bindtap='openDetailWin'>
@@ -21,11 +21,11 @@
             {{item.typeName}}            
           </view>
           <view class='flex-row'>
-            <view class='col-30 sPrice'>
+            <view class='col-35 sPrice'>
               <text class='text-red'>¥ {{item.price}}</text>
             </view>
-            <view class='amount col-70 text-right flex-row'>
-              <view class='col-35'>
+            <view class='amount col-65 text-right flex-row'>
+              <view class='col-30'>
               </view>              
               <view class='col-20 text-center' data-id='{{item.shopId}}' bindtap='minusClick' data-index='{{index}}'>
                 <image wx:if='{{item.number <= 1}}' mode='widthFix' src='../images/minus_dis.png'></image>
@@ -44,7 +44,7 @@
     </checkbox-group>
   </view>
 
-  <view class='total flex-row' wx:if='{{ token != ""}}'>
+  <view class='total flex-row' wx:if='{{ token != "" && itemList.length != 0 }}'>
     <view class='col-30'>
     </view>
     <view class='col-40 text-right price'>

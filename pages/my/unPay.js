@@ -1,6 +1,8 @@
 const app = getApp()
 var webhost = app.globalData.webhost;
+var md5 = require('../../utils/md5.js')    
 var listOrder;
+var pay;
 
 Page({
   data: {
@@ -80,8 +82,18 @@ Page({
     })
   },
 
-  pay: function () {
-
+  pay: function (e) {
+    var that = this;
+    var orderNumber = e.currentTarget.dataset.num;
+    var money = e.currentTarget.dataset.money;
+    wx.login({
+      success: res => {
+        var code = res.code;
+        console.log(res);
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        pay(code, orderNumber, money);
+      }
+    })
   },
 
   onLoad: function (options) {
@@ -142,17 +154,95 @@ Page({
         }
       })
     }
+
+    pay = (code, orderNumber, money) => {
+      var data = {
+        "code": code,
+        "orderNumber": orderNumber,
+        "totalMoney": money
+      }
+      wx.request({
+        url: webhost + "wx/xcx/pay",
+        data: data,
+        header: {
+          token: that.data.token
+        },
+        method: 'POST',
+        success: function (res) {
+          switch (+res.data.code) {
+            case 0:
+              console.log(res.data.value);
+              // return false;
+              // var paySign = md5.hexMD5('appId=' + res.data.value.appid + '&nonceStr=' + res.data.value.noncestr + '&package=' + res.data.value.package + '&signType=MD5&timeStamp=' + res.data.value.timestamp + '&key=iffnMzAEvmTYtlWjZqi1ka3yKGh411pL');
+              wx.requestPayment({
+                'timeStamp': res.data.value.timeStamp + '',
+                'nonceStr': res.data.value.nonceStr,
+                'package': res.data.value.package,
+                'signType': 'MD5',
+                // 'paySign': paySign,
+                'paySign': res.data.value.paySign,
+                'success': function (res) {
+                  wx.showToast({
+                    title: '支付成功'
+                  });
+                  that.setData({
+                    pageNo: 1,
+                    orderList: []
+                  })
+                  listOrder();
+                },
+                'fail': function (res) {
+                  wx.showToast({
+                    title: '支付失败'
+                  })
+                },
+                'complete': function (res) {
+
+                }
+              })
+              break;
+            case 401:
+              wx.showModal({
+                title: '未登录',
+                content: '请先登录',
+                success: (res) => {
+                  if (res.confirm) {
+                    wx.navigateTo({
+                      url: '../login/login'
+                    })
+                  }
+                }
+              })
+              break;
+            case 500:
+              wx.showModal({
+                title: '发现问题了',
+                content: res.data.msg,
+                showCancel: false,
+                confirmColor: '#4aa7fa'
+              })
+          }
+        },
+        fail: function (res) {
+          that.setData({
+            connect: false
+          })
+        }
+      })
+    }
   },
 
   onShow: function () {
     var that = this;
     if (app.globalData.token != '') {
       that.setData({
-        token: app.globalData.token
+        token: app.globalData.token,
+        pageNo: 1,
+        orderList: []
       })
-      if (that.data.first) {
-        listOrder();
-      }    
+      // if (that.data.first) {
+      listOrder();
+      // }    
     } else {
       that.setData({
         token: ''

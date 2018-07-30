@@ -4,25 +4,25 @@ page {
 
 .addressM {
   background-color: #fff;
-  padding: 40rpx 3rpx;
-  font-size: 32rpx;
+  padding: 21rpx 3rpx;
+  font-size: 30rpx;
   color: rgba(0, 0, 0, 0.81);
 }
 
 .address {
-  margin-top: 6rpx;
+  /* margin-top: 6rpx; */
 }
 
 .location {
   width: 32rpx;
   position: relative;
-  top: 28rpx;
+  top: 49rpx;
 }
 
 .arrow {
   width: 18rpx;
   position: relative;
-  top: 28rpx;
+  top: 49rpx;
 }
 
 .cross {

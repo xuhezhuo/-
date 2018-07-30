@@ -2,11 +2,11 @@
 <view class='container'>
   <view class='header'>
     <view class='col-7 search.bg-default-re'>
-      <input bindtap='openSearchWin' confirm-type="search" placeholder-class="placeholder" disabled='true' placeholder='搜索产品，技术，案例关键词'></input>
+      <input bindtap='openSearchWin' confirm-type="search" placeholder-class="placeholder" disabled='true' placeholder='搜索产品/技术/案例关键词'></input>
     </view>
 
     <view class='banner'>
-      <image mode='widthFix' src='../images/act.jpg'></image>
+      <image mode='widthFix' src='../images/act1.jpg'></image>
     </view>
   </view>
 

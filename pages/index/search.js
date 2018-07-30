@@ -17,6 +17,7 @@ Page({
   },
 
   searchT: function(){
+    var that =this;
     that.setData({
       pageNo: 1,
       itemList: []
